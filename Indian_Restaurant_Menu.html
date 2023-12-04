@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indian Restaurant</title>
+  <style>
+    /* Add your styles here */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+    }
+    header, footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 1em;
+    }
+    nav {
+      background: #666;
+      padding: 0.5em;
+    }
+    section {
+      padding: 1em;
+    }
+    .menu-item {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin: 1em;
+      padding: 1em;
+      background: #fff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Indian Restaurant</h1>
+  </header>
+  <nav>
+    <button onclick="filterMenu('all')">All</button>
+    <button onclick="filterMenu('biryani')">Chicken Biryani</button>
+    <button onclick="filterMenu('butterChicken')">Butter Chicken</button>
+    <button onclick="filterMenu('butterNaan')">Butter Naan</button>
+  </nav>
+  <section id="menu">
+    <div class="menu-item" data-category="biryani">
+      <h2>Chicken Biryani</h2>
+      <p>Delicious chicken biryani with aromatic spices.</p>
+      <p>Price: $10.99</p>
+    </div>
+    <div class="menu-item" data-category="butterChicken">
+      <h2>Butter Chicken</h2>
+      <p>Creamy and rich butter chicken curry.</p>
+      <p>Price: $12.99</p>
+    </div>
+    <div class="menu-item" data-category="butterNaan">
+      <h2>Butter Naan</h2>
+      <p>Soft and buttery naan bread.</p>
+      <p>Price: $2.99</p>
+    </div>
+  </section>
+  <footer>
+    <p>&copy; 2023 Indian Restaurant</p>
+  </footer>
+  <script>
+    function filterMenu(category) {
+      const items = document.querySelectorAll('.menu-item');
+      items.forEach(item => {
+        if (category === 'all' || item.dataset.category === category) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
